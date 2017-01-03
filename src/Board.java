@@ -1,5 +1,6 @@
 import javax.swing.JFrame;
 
+
 import javax.swing.JButton;
 
 
@@ -10,6 +11,9 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 
 import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
+
 
 
 public class Board extends JFrame implements ActionListener
@@ -204,10 +208,14 @@ public class Board extends JFrame implements ActionListener
 
 		{
 
-			System.out.println( check );
-
-			return;
-
+			//JOptionPane.showMessageDialog(null, check+" Play again?");
+			String input = JOptionPane.showInputDialog(check+" Play Again?");
+			if(input.equals("Yes") || input.equals("yes"))
+			{
+				new Board(6,7); winner = false;
+				return;
+			}
+			else return;
 		}
 
 
@@ -441,9 +449,10 @@ public class Board extends JFrame implements ActionListener
 	{
 
 		// TODO Auto-generated method stub
-
+		
+		
 		new Board(6,7);//makes new ButtonGrid with 2 parameters
-
+		
 
 
 	}
